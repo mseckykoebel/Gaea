@@ -1,0 +1,5 @@
+/*Rule for the dropdown toggle -> we want it to be clickable*/
+
+.dropdown-toggle {
+  cursor: pointer;
+}

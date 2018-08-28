@@ -1,0 +1,53 @@
+<nav class="navbar calcite-navbar navbar-fixed-top calcite-text-light calcite-bgcolor-blue">
+
+  <!-- Menu -->
+  <div class="collapse navbar-collapse  " id="navbarsExampleDefault">
+
+    <!-- list items represents a link in the navigation bar -->
+    <ul class="navbar-nav mr-auto">
+
+      <!-- dropdown menu in the navigation bar -->
+      <li ngbDropdown class="nav-item dropdown">
+
+        <!-- button for clicking -->
+        <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          style=" margin: 5px 5px -30px -40px;">
+          <img src="../../media/earth-globe.png" style="width: 40px; height: 40px; margin: 5px 5px 0px 2px; border: none" alt="">
+        </a>
+
+        <!-- list of the items -->
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01" role="menu">
+          <li>
+            <a role="menuitem" tabindex="0" data-target="#panelInfo" aria-haspopup="true">
+              <span class="esri-icon-group"></span> My Account</a>
+          </li>
+          <li>
+            <a role="menuitem" tabindex="0" href="#" data-target="#panelLegend" aria-haspopup="true">
+              <span class="glyphicon glyphicon-list-alt"></span>  Toggle Legend</a>
+          </li>
+          <li>
+            <a role="menuitem" tabindex="0" href="#" id="calciteToggleNavbar" aria-haspopup="true">
+              <span class="glyphicon glyphicon-fullscreen"></span>  Toggle Full Map</a>
+          </li>
+          <li>
+            <a role="menuitem" tabindex="0" href="#" id="calciteToggleNavbar" aria-haspopup="true">
+              <span class="esri-icon-description"></span>  Help</a>
+          </li>
+          <li>
+            <a role="menuitem" tabindex="0" href="#" id="calciteToggleNavbar" aria-haspopup="true">
+              <span class="esri-icon-sign-out"></span>  Log Out</a>
+          </li>
+        </div>
+
+      </li>
+    </ul>
+  </div>
+
+  <!-- Title -->
+  <div class="calcite-title calcite-overflow-hidden">
+    <div class="calcite-title-main" style="margin-right: 5 px">Gaea - Home</div>
+    <span class="calcite-title-divider hidden-xs"></span>
+    <div class="calcite-title-sub hidden-xs">This is a work in progress</div>
+  </div>
+
+</nav>
