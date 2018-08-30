@@ -1,5 +1,21 @@
 /*Rule for the dropdown toggle -> we want it to be clickable*/
+.nav-link {
+  cursor: pointer;
+}
 
 .dropdown-toggle {
   cursor: pointer;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.dropdown-pull-right>.dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+.dropdown-toggle::after {
+  display: none;
 }

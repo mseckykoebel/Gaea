@@ -13,13 +13,17 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { HomeComponent } from "./home/home.component";
 import { LoginComponent } from "./login/login.component";
 import { APP_BASE_HREF } from "@angular/common";
+import { AccountComponent } from "./account/account.component";
+
+import { TooltipModule } from "ngx-bootstrap/tooltip";
 
 @NgModule({
   declarations: [
     AppComponent,
     BsNavbarComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
@@ -27,9 +31,11 @@ import { APP_BASE_HREF } from "@angular/common";
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     NgbModule.forRoot(),
+    TooltipModule.forRoot(), // i am not sure what this does but maybe it helps me IDK
     RouterModule.forRoot([
       { path: "", component: HomeComponent },
-      { path: "login", component: LoginComponent }
+      { path: "login", component: LoginComponent },
+      { path: "account", component: AccountComponent}
     ])
   ],
   providers: [

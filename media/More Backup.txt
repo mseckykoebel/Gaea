@@ -1,0 +1,44 @@
+<a class="navbar-brand" routerLink="">
+    <img src="../../media/earth-globe.png" alt="">
+  </a>
+
+???????????
+
+  <div ngbDropdown class="dropdown calcite-dropdown calcite-bg-light calcite-text-dark">
+
+    <!-- icon -->
+    <a ngbDropdownToggle class="navbar-brand dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">
+      <div class="calcite-dropdown-toggle">
+        <img src="../../media/earth-globe.png" style="margin: -14px 0px 0px -12.5px" alt="">
+      </div>
+    </a>
+    
+    <div ngbDropdownMenu class="collapse navbar-collapse">
+      <li>
+        <a class="visible-xs" data-target="#panelSearch" role="button" aria-haspopup="true">
+          <span class="glyphicon glyphicon-search"></span> Search</a>
+      </li>
+      <li>
+        <a role="button" data-target="#panelLegend" aria-haspopup="true">
+          <span class="glyphicon glyphicon-list"></span> Legend</a>
+      </li>
+      <li>
+        <a role="button" data-target="#panelBasemaps" aria-haspopup="true">
+          <span class="glyphicon glyphicon-th-large"></span> Basemaps</a>
+      </li>
+      <li>
+        <a role="button" id="calciteToggleNavbar" aria-haspopup="true">
+          <span class="glyphicon glyphicon-fullscreen"></span> Toggle Title</a>
+      </li>
+    </div>
+  </div>
+
+    <li>
+    <!-- Title -->
+    <div class="calcite-title calcite-overflow-hidden">
+      <div class="calcite-title-main" style="text-align: center">Gaea - Home</div>
+      <span class="calcite-title-divider hidden-xs"></span>
+      <div class="calcite-title-sub hidden-xs">This is a work in progress</div>
+    </div>
+  </li>
+
