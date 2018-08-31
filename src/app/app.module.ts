@@ -15,7 +15,9 @@ import { LoginComponent } from "./login/login.component";
 import { APP_BASE_HREF } from "@angular/common";
 import { AccountComponent } from "./account/account.component";
 
-import { TooltipModule } from "ngx-bootstrap/tooltip";
+import { AuthService } from "./auth-service.service";
+import { AuthGuard } from "./auth-guard.service";
+import { UserService } from "./user.service";
 
 @NgModule({
   declarations: [
@@ -31,15 +33,17 @@ import { TooltipModule } from "ngx-bootstrap/tooltip";
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     NgbModule.forRoot(),
-    TooltipModule.forRoot(), // i am not sure what this does but maybe it helps me IDK
     RouterModule.forRoot([
       { path: "", component: HomeComponent },
       { path: "login", component: LoginComponent },
-      { path: "account", component: AccountComponent}
+      { path: "account", component: AccountComponent, canActivate: [AuthGuard] }
     ])
   ],
   providers: [
-    {provide: APP_BASE_HREF, useValue: "/"}
+    { provide: APP_BASE_HREF, useValue: "/" },
+    AuthService,
+    AuthGuard,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

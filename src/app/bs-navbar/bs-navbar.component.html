@@ -1,14 +1,13 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
   <div class="collapse navbar-collapse">
-    <ul class="navbar-nav mr-auto">
 
+    <ul class="navbar-nav mr-auto">
       <!-- here is the dropdown menu for the navbar -->
-      <li ngbDropdown class="nav-item">
-        <a ngbDropdownToggle class="nav-link dropdown-toggle py-0" data-toggle="dropdown" id="dropdown01" aria-haspopup="true"
-          aria-expanded="flase">
+      <li ngbDropdown *ngIf="appUser" class="nav-item">
+        <a ngbDropdownToggle class="nav-link py-0" id="dropdown01" aria-haspopup="true" aria-expanded="flase" style="margin-left: -10px">
 
           <!-- the image toggles the dropdown menu-->
-          <img src="../../media/earth-globe.png" style="width: 40px; height: 40px;" alt="Small Globe">
+          <img src="../../assets/earth-globe.png" style="width: 42px; height: 42px; margin-top: -2px" alt="Small Globe">
         </a>
 
         <!-- Items for the dropdown menu -->
@@ -19,45 +18,71 @@
           </a>
           <a class="dropdown-item">
             <i class="esri-icon-drag-horizontal"></i>
-            TBD </a>
+            TBD
+          </a>
           <a class="dropdown-item">
             <i class="esri-icon-drag-horizontal"></i>
-            TBD </a>
+            TBD
+          </a>
           <a class="dropdown-item">
             <i class="esri-icon-drag-horizontal"></i>
-            TBD </a>
+            TBD
+          </a>
           <a class="dropdown-item">
             <i class="esri-icon-drag-horizontal"></i>
-            TBD </a>
+            TBD
+          </a>
           <a class="dropdown-item">
             <i class="esri-icon-drag-horizontal"></i>
-            TBD </a>
+            TBD
+          </a>
+
         </div>
       </li>
 
+      <!-- title of the app in the ul where it all is to the side-->
+      <li>
+        <a class="navbar-header" style="font-size: 150%; margin-left: 8px">Gaea</a>
+      </li>
+
     </ul>
+
+
 
     <ul class="navbar-nav ml-auto">
 
       <!-- here is the dropdown menu for the navbar -->
-      <li ngbDropdown class="nav-item" placement="bottom-right">
+      <li ngbDropdown *ngIf="appUser; else anonymousUser" class="nav-item dropdown" placement="bottom-right">
         <a ngbDropdownToggle class="nav-link dropdown-toggle py-0" role="button" data-toggle="dropdown" id="dropdown01"
           aria-haspopup="true" aria-expanded="flase">
-          Current User
+          <i class="esri-icon-user"></i>
+          {{appUser.name}}
         </a>
 
         <!-- Items for the dropdown menu -->
-        <div ngbDropdownMenu class="dropdown-menu">
+        <div ngbDropdownMenu class="dropdown-menu" routerLink="/account">
           <a class="dropdown-item">
             My Account
           </a>
+          <div class="dropdown-divider"></div>
 
-          <a class="dropdown-item" routerLink="/login">
+          <a (click)="logout()" class="dropdown-item">
             Log Out
           </a>
+
         </div>
       </li>
+
+      <ng-template #anonymousUser>
+
+        <button class="btn" routerLink="/login">
+          Log In
+        </button>
+
+      </ng-template>
+
     </ul>
+
   </div>
 
 </nav>
